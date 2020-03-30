@@ -1,0 +1,107 @@
+// USER VARIABLES SECTION
+
+$accent: #ff9900; // Accent Color
+$purple: #393185;
+$white: #fff;
+$purple-text: #284084;
+$gray: #e5e5e5;
+$fontsize: 14px; // Body Font Size
+$textcolor: #4f4f4f; // Text Color
+//$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+$Montserrat: Montserrat,
+sans-serif; // Roboto Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+//$grid-gutter-width: 20px;
+//$gutter: $grid-gutter-width;
+
+// IMPORT SECTION
+
+//@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+//@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    // font-display: swap; // Uncomment to initially display system fonts
+    src: local($fname), url($furl) format("woff2");
+  }
+}
+
+@include font("Montserrat", normal, 400, "../fonts/Montserrat-Regular.woff2");
+@include font("Montserrat", normal, 600, "../fonts/Montserrat-Medium.woff2");
+@include font("Montserrat", normal, 800, "../fonts/Montserrat-Bold.woff2");
+@include font("Montserrat", normal, 900, "../fonts/Montserrat-Regular.woff2");
+@include font("Roboto",
+  italic,
+  700,
+  "../fonts/roboto-bolditalic-webfont.woff2"
+);
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder {
+  color: #666;
+}
+
+::selection {
+  background-color: $accent;
+  color: #fff;
+}
+
+input,
+textarea {
+  outline: none;
+
+  &:focus:required:invalid {
+    border-color: red;
+  }
+
+  &:required:valid {
+    border-color: green;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $Montserrat;
+  font-size: $fontsize;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  overflow-x: hidden;
+  color: $textcolor;
+  background-color: $gray;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
